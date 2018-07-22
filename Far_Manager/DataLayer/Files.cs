@@ -1,11 +1,12 @@
-﻿using System;
+﻿using FileSystemManager._CommandLine;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication63
+namespace FileSystemManager.Far_Manager.DataLayer
 {
     class Files
     {
@@ -14,7 +15,7 @@ namespace ConsoleApplication63
         {
             List<string> files = new List<string>();
             files.AddRange(Directory.EnumerateFiles(Directory.GetCurrentDirectory()));
-            if(files.Count==0)
+            if (files.Count == 0)
                 Console.WriteLine("This directory doesn't have any file");
             foreach (string file in files)
             {
@@ -136,7 +137,7 @@ namespace ConsoleApplication63
                 targetPath = targetPath + @"\" + sourcePath.Substring(sourcePath.LastIndexOf("\\") + 1);
                 File.Copy(sourcePath, targetPath);
             }
-            
+
         }
 
         //Copy of file(overrided)

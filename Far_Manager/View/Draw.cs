@@ -1,11 +1,12 @@
-﻿using System;
+﻿using FileSystemManager.Far_Manager.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication63
+namespace FileSystemManager.Far_Manager.View
 {
     class Draw
     {
@@ -85,7 +86,7 @@ namespace ConsoleApplication63
             if (curDirRight.Length > widthEveryColumn * 2)
                 Write(widthEveryColumn * 2 + 6, 0, $" {curDirRight} ".Remove(widthEveryColumn * 2 - 1));
             else
-            Write(widthEveryColumn * 3 + 5 - curDirRight.Length / 2, 0, $" {curDirRight} ");
+                Write(widthEveryColumn * 3 + 5 - curDirRight.Length / 2, 0, $" {curDirRight} ");
             // Write(width - width / 4, 0, $"{Directory.GetDirectoryRoot(Directory.GetCurrentDirectory().ToUpper())}");
             // Draw column borders
             Write(0, 0, "╔");
@@ -137,7 +138,7 @@ namespace ConsoleApplication63
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.ForegroundColor = ConsoleColor.White;
-            Tips tipItems = new ConsoleApplication63.Tips();
+            Tips tipItems = new Tips();
             int x = 2;
             for (int i = height; i < height + 2; i++)
                 Write(0, height, new string(' ', width + 2));
@@ -298,7 +299,7 @@ namespace ConsoleApplication63
             int position;
             if (columnX < widthEveryColumn)
             {
-                Write(columnX, columnHeight + 1, new string(' ', widthEveryColumn * 2 ));
+                Write(columnX, columnHeight + 1, new string(' ', widthEveryColumn * 2));
                 Write(columnX, columnHeight + 4, new string(' ', widthEveryColumn * 2));
                 if (Directory.Exists(currentDirectory))
                 {

@@ -1,15 +1,15 @@
-﻿using System;
+﻿using FileSystemManager._CommandLine;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication63
+namespace FileSystemManager.Far_Manager.DataLayer
 {
     class Folder
     {
-        //Change of current directory
         public static string Cd(string[] parameters)
         {
             if (parameters[1] == ".." && $"{Directory.GetDirectoryRoot(Directory.GetCurrentDirectory())}" != Directory.GetCurrentDirectory())
@@ -69,7 +69,7 @@ namespace ConsoleApplication63
         //Copy of directory
         public static void Copy(string sourcePath, string targetPath)
         {
-            string newFoldersPath="";
+            string newFoldersPath = "";
             if (Directory.Exists(sourcePath))
                 newFoldersPath = targetPath + @"\" + sourcePath.Substring(sourcePath.LastIndexOf("\\") + 1);
             else if (Directory.Exists(Directory.GetCurrentDirectory() + @"\" + sourcePath))
@@ -112,8 +112,8 @@ namespace ConsoleApplication63
                     sourthName = ((Directory.GetCurrentDirectory() + @"\" + parameters[1]).Substring(parameters[1].LastIndexOf("\\") + 1));
                     newFoldersPath = parameters[2] + @"\" + parameters[1];
                 }
-            if (!Directory.Exists(newFoldersPath))
-                { 
+                if (!Directory.Exists(newFoldersPath))
+                {
                     if (!Directory.Exists(newFoldersPath))
                     {
                         DirectoryInfo folder = new DirectoryInfo(parameters[2]);
@@ -174,7 +174,8 @@ namespace ConsoleApplication63
                     dirItems.Add("..");
                 dirItems.AddRange(Directory.EnumerateDirectories(dir));
                 dirItems.AddRange(Directory.EnumerateFiles(dir));
-            }catch
+            }
+            catch
             { }
             return dirItems;
         }

@@ -1,11 +1,13 @@
-﻿using System;
+﻿using FileSystemManager._CommandLine;
+using FileSystemManager.Far_Manager.DataLayer;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication63
+namespace FileSystemManager.Far_Manager.View
 {
     class FarManager
     {
@@ -217,7 +219,7 @@ namespace ConsoleApplication63
                                 isDrivesList = !isDrivesList;
                             else if (isDrivesList && AreDrivesRight && AreDrivesLeft)
                                 isDrivesList = true;
-                            else if(!isDrivesList&&AreDrivesLeft&& !AreDrivesRight && isLeftPanel)
+                            else if (!isDrivesList && AreDrivesLeft && !AreDrivesRight && isLeftPanel)
                                 isDrivesList = true;
                             else if (!isDrivesList && !AreDrivesLeft && AreDrivesRight && isLeftPanel)
                                 isDrivesList = true;
@@ -233,9 +235,9 @@ namespace ConsoleApplication63
                     else
                     {
                         selectedIndexPanel2 = selectedIndex;
-                        AreDrivesRight=isDrivesList;
+                        AreDrivesRight = isDrivesList;
                     }
-                        draw.ClearPanel(isLeftPanel);
+                    draw.ClearPanel(isLeftPanel);
                     history.AddCommand(choice.Key.ToString());
                 } while (true);
             }

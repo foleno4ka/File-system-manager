@@ -1,4 +1,6 @@
-﻿namespace ConsoleApplication63
+﻿using FileSystemManager.Far_Manager.View;
+
+namespace FileSystemManager
 {
     class Program
     {

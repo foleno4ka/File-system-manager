@@ -7,7 +7,7 @@
     <ProjectGuid>{BE23C025-12A1-4404-ABD7-4E5E4920B3FD}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ConsoleApplication63</RootNamespace>
+    <RootNamespace>FileSystemManager</RootNamespace>
     <AssemblyName>ConsoleApplication63</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -43,21 +43,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CommandLine.cs" />
-    <Compile Include="Draw.cs" />
-    <Compile Include="FarManager.cs" />
-    <Compile Include="Files.cs" />
-    <Compile Include="Folder.cs" />
-    <Compile Include="Help.cs" />
-    <Compile Include="History.cs" />
-    <Compile Include="Parser.cs" />
+    <Compile Include="Far_Manager\DataLayer\Files.cs" />
+    <Compile Include="Far_Manager\DataLayer\Folder.cs" />
+    <Compile Include="Far_Manager\View\Draw.cs" />
+    <Compile Include="Far_Manager\View\FarManager.cs" />
+    <Compile Include="Far_Manager\View\History.cs" />
+    <Compile Include="Far_Manager\View\Tips.cs" />
+    <Compile Include="_CommandLine\CommandLine.cs" />
+    <Compile Include="_CommandLine\Help.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Tips.cs" />
+    <Compile Include="_CommandLine\Parser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

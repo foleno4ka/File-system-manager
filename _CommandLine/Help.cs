@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication63
+namespace FileSystemManager._CommandLine
 {
     class Help
     {
+        ///
         private Dictionary<string, string> helpItems;
 
         public Help()

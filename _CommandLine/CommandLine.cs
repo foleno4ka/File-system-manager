@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FileSystemManager.Far_Manager.DataLayer;
+using FileSystemManager.Far_Manager.View;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -6,11 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApplication63
+namespace FileSystemManager._CommandLine
 {
     class CommandLine
     {
-
         private string currentDirectory;
 
 
@@ -42,9 +43,9 @@ namespace ConsoleApplication63
                 {
                     string enter = Console.ReadLine();
                     string[] parameters = new Parser(enter).ParseCommands(enter, ' ');
-                    if(parameters.Length==1)
-                       parameters = new Parser(enter).ParseCommands(enter, '>');
-                    if (Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), parameters[0])) && Path.IsPathRooted(parameters[0]) && parameters[0].Length <=2)
+                    if (parameters.Length == 1)
+                        parameters = new Parser(enter).ParseCommands(enter, '>');
+                    if (Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), parameters[0])) && Path.IsPathRooted(parameters[0]) && parameters[0].Length <= 2)
                         currentDirectory = Path.Combine(Directory.GetCurrentDirectory(), parameters[0]).ToUpper();
                     else if (enter == "")
                     { }
@@ -96,8 +97,8 @@ namespace ConsoleApplication63
                                 Files.Delete(parameters);
                                 break;
                             case "open":
-                                if(File.Exists(enter))
-                                Files.OpenDocument(enter);
+                                if (File.Exists(enter))
+                                    Files.OpenDocument(enter);
                                 else
                                     Console.WriteLine("File doesn't exists");
                                 break;
