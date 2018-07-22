@@ -1,15 +1,14 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("ConsoleApplication63")]
+[assembly: AssemblyTitle("FileSystemManager")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("by adguard")]
-[assembly: AssemblyProduct("ConsoleApplication63")]
+[assembly: AssemblyProduct("FileSystemManager")]
 [assembly: AssemblyCopyright("Copyright © by adguard 2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -17,7 +17,6 @@ namespace FileSystemManager.Far_Manager.View
         public void AddCommand(string command)
         {
             historyCommands.Add(command);
-
         }
 
         public void ShowHistory()

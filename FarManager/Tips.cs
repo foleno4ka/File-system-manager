@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FileSystemManager.Far_Manager.View
 {
@@ -11,18 +8,20 @@ namespace FileSystemManager.Far_Manager.View
         public Dictionary<int, string> tips;
         public Tips()
         {
-            tips = new Dictionary<int, string>();
-            tips.Add(1, "Help");
-            tips.Add(2, "History");
-            tips.Add(3, "Command Line");
-            tips.Add(4, "Copy");
-            tips.Add(5, "Move");
-            tips.Add(6, "Drivers");
-            tips.Add(11, "Quit");
+            tips = new Dictionary<int, string>
+            {
+                { 1, "Help" },
+                { 2, "History" },
+                { 3, "Command Line" },
+                { 4, "Copy" },
+                { 5, "Move" },
+                { 6, "Drivers" },
+                { 11, "Quit" }
+            };
         }
+
         public void ShowTips()
         {
-
             Console.Clear();
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.ForegroundColor = ConsoleColor.White;

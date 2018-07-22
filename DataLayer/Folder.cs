@@ -1,4 +1,4 @@
-﻿using FileSystemManager._CommandLine;
+﻿using FileSystemManager.CommandLine;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FileSystemManager.Far_Manager.DataLayer
+namespace FileSystemManager.DataLayer
 {
     class Folder
     {
@@ -176,7 +176,7 @@ namespace FileSystemManager.Far_Manager.DataLayer
                 dirItems.AddRange(Directory.EnumerateFiles(dir));
             }
             catch
-            { }
+            { } // TODO
             return dirItems;
         }
 
@@ -192,7 +192,7 @@ namespace FileSystemManager.Far_Manager.DataLayer
                         size += fi.Length;
                 }
             }
-            catch { }
+            catch { } // TODO
             return size;
         }
     }

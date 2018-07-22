@@ -1,31 +1,24 @@
-﻿using FileSystemManager.Far_Manager.DataLayer;
+﻿using FileSystemManager.DataLayer;
 using FileSystemManager.Far_Manager.View;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace FileSystemManager._CommandLine
+namespace FileSystemManager.CommandLine
 {
     class CommandLine
     {
         private string currentDirectory;
 
-
         public void Date()
         {
             DateTime localDate = DateTime.Now;
-            String[] cultureNames = { "en-US", "en-GB", "fr-FR",
-                                "de-DE", "ru-RU" };
+            String[] cultureNames = { "en-US", "en-GB", "fr-FR", "de-DE", "ru-RU" };
 
             foreach (var cultureName in cultureNames)
             {
                 var culture = new CultureInfo(cultureName);
-                Console.WriteLine("{0}: {1}", cultureName,
-                                  localDate.ToString(culture));
+                Console.WriteLine("{0}: {1}", cultureName, localDate.ToString(culture));
             }
         }
 
@@ -48,7 +41,7 @@ namespace FileSystemManager._CommandLine
                     if (Directory.Exists(Path.Combine(Directory.GetCurrentDirectory(), parameters[0])) && Path.IsPathRooted(parameters[0]) && parameters[0].Length <= 2)
                         currentDirectory = Path.Combine(Directory.GetCurrentDirectory(), parameters[0]).ToUpper();
                     else if (enter == "")
-                    { }
+                    { } // TODO
                     else
                     {
                         switch (parameters[0].ToLowerInvariant())
@@ -117,7 +110,6 @@ namespace FileSystemManager._CommandLine
                                 break;
                         }
                     }
-                    //Console.ReadKey();
                     Directory.SetCurrentDirectory(currentDirectory);
                     Console.Write(Path.GetFullPath(Directory.GetCurrentDirectory()) + "> ");
                     historyList.AddCommand(enter);

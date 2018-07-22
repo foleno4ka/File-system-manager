@@ -1,12 +1,10 @@
-﻿using FileSystemManager._CommandLine;
+﻿using FileSystemManager.CommandLine;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace FileSystemManager.Far_Manager.DataLayer
+namespace FileSystemManager.DataLayer
 {
     class Files
     {
@@ -95,6 +93,7 @@ namespace FileSystemManager.Far_Manager.DataLayer
             if (File.Exists(sourcePath))
                 File.Move(sourcePath, targetPath + @"\" + sourcePath.Substring(sourcePath.LastIndexOf("\\") + 1));
         }
+
         //create file
         public static void Mf(string[] parameters)
         {
@@ -118,6 +117,7 @@ namespace FileSystemManager.Far_Manager.DataLayer
                 }
             }
         }
+
         //search file
         public static void Search(string[] parameters)
         {

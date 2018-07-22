@@ -1,10 +1,8 @@
-﻿using FileSystemManager.Far_Manager.DataLayer;
+﻿using FileSystemManager.DataLayer;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FileSystemManager.Far_Manager.View
 {
@@ -50,6 +48,7 @@ namespace FileSystemManager.Far_Manager.View
             startThirdColumnX = widthEveryColumn * 2 + 5;
             startFourthColumnX = widthEveryColumn * 3 + 6;
         }
+
         public void Write(int left, int top, string item)
         {
             Console.SetCursorPosition(left, top);
@@ -76,7 +75,6 @@ namespace FileSystemManager.Far_Manager.View
             Console.BackgroundColor = ConsoleColor.Blue;
             Console.ForegroundColor = ConsoleColor.White;
             // Draw disk names
-
 
             //int address = widthEveryColumn * 3 + 5 - curDirRight.Length / 2;
             if (curDirLeft.Length > widthEveryColumn * 2)
@@ -134,6 +132,7 @@ namespace FileSystemManager.Far_Manager.View
             Write(widthEveryColumn * 2 + 4, height - 1, "╚");
             Write(widthEveryColumn * 4 + 6, height - 1, "╝");
         }
+
         public void DrawTips()
         {
             Console.BackgroundColor = ConsoleColor.Black;
@@ -283,7 +282,7 @@ namespace FileSystemManager.Far_Manager.View
                 fileCount = Directory.EnumerateFiles(currentDirectory).Count();
                 folderCount = Directory.EnumerateDirectories(currentDirectory).Count();
             }
-            catch { }
+            catch { } // TODO
         }
 
         public void WriteInfo(string currentDirectory, int columnX, int cWidth, int borderNumber)

@@ -1,11 +1,8 @@
-﻿using FileSystemManager._CommandLine;
-using FileSystemManager.Far_Manager.DataLayer;
+﻿using FileSystemManager.DataLayer;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FileSystemManager.Far_Manager.View
 {
@@ -40,9 +37,7 @@ namespace FileSystemManager.Far_Manager.View
             }
             return driverList;
         }
-
-
-
+        
         public void Run()
         {
             string currentDirectoryLeft = Directory.GetCurrentDirectory();
@@ -82,8 +77,7 @@ namespace FileSystemManager.Far_Manager.View
 
                     bool isCurrentDirectoryRoot = Directory.GetDirectoryRoot(Directory.GetCurrentDirectory()) == Directory.GetCurrentDirectory();
                     Cmd(curDir);
-
-
+                    
                     choice = Console.ReadKey();
                     int leftCount = leftPanelItems.Count();
                     int rightCount = rightPanelItems.Count();
@@ -129,7 +123,7 @@ namespace FileSystemManager.Far_Manager.View
                             draw.DrawPanels(false, selectedIndexPanel1, selectedIndexPanel2, Folder.GetDirectoryItems(currentDirectoryRight));
                             break;
                         case ConsoleKey.F3:
-                            new CommandLine().Run();
+                            new CommandLine.CommandLine().Run();
                             break;
                         case ConsoleKey.F4:
                             {
@@ -138,7 +132,6 @@ namespace FileSystemManager.Far_Manager.View
                                     isLeftPanel = false;
                                     Files.Copy(currentDirectoryItems[selectedIndexPanel1], currentDirectoryRight);
                                     Folder.Copy(currentDirectoryItems[selectedIndexPanel1], currentDirectoryRight);
-
                                 }
                                 else
                                 {
@@ -247,7 +240,6 @@ namespace FileSystemManager.Far_Manager.View
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
-
         }
     }
 }
